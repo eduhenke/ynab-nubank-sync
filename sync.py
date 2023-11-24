@@ -112,7 +112,7 @@ def collect_checking_stmts(nu: Nubank, take_while, checking_account_id):
             else:
                 return None
         elif 'payments' in stmt['tags']:  # Fatura
-            payee_name = "Fatura"
+            payee_name = stmt['title']
             amount = amount * -1
         elif 'money-in' in stmt['tags']:  # Transferir
             amount = amount * +1
